@@ -1,8 +1,13 @@
 import React from "react";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import TweetBox from "./TweetBox";
+import { Tweet } from "@/typing";
 
-function Feed() {
+interface Props {
+  tweets: Tweet[];
+}
+
+function Feed({ tweets }: Props) {
   return (
     <div className="col-span-7 lg:col-span-5 border-x">
       <div className="flex items-center justify-between">
