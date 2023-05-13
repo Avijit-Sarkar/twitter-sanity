@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import TweetBox from "./TweetBox";
 import { Tweet } from "@/typing";
+import TweetComponent from "./Tweet";
 
 interface Props {
   tweets: Tweet[];
@@ -16,6 +17,12 @@ function Feed({ tweets }: Props) {
       </div>
       <div>
         <TweetBox />
+      </div>
+
+      <div>
+        {tweets.map((tweet) => (
+          <TweetComponent key={tweet._id} tweet={tweet} />
+        ))}
       </div>
     </div>
   );
