@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 
 const commentQuery = groq`
-*[_type == "comment" && reference(*[_type == "tweet" && _id == $tweetId]._id)] {
+*[_type == "comment" && references(*[_type == "tweet" && _id == $tweetId]._id)] {
     _id,
     ...
 } | order(_createdAt desc)
