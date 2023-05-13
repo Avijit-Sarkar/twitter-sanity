@@ -5,6 +5,7 @@ import { Tweet } from "@/typing";
 import { fetchTweets } from "@/utils/fetchTweets";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 interface Props {
   tweets: Tweet[];
@@ -19,6 +20,9 @@ export default function Home({ tweets }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Toaster />
+
       <main className="grid grid-cols-9">
         {/* Sidebar */}
         <Sidebar />
