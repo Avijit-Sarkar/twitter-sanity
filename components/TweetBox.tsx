@@ -26,7 +26,7 @@ function TweetBox({ setTweets }: Props) {
   const [imageUrlBoxIsOpen, setImageUrlBoxIsOpen] = useState<boolean>(false);
 
   const addImageToTweet = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
   ) => {
     e.preventDefault();
 
@@ -110,7 +110,7 @@ function TweetBox({ setTweets }: Props) {
           </div>
 
           {imageUrlBoxIsOpen && (
-            <form className="mt-5 flex rounded-lg bg-twitter/80 py-2 px-4">
+            <div className="mt-5 flex rounded-lg bg-twitter/80 py-2 px-4">
               <input
                 ref={imageInputRef}
                 className="flex-1 bg-transparent p-2 text-white outline-none placeholder:text-white"
@@ -124,7 +124,7 @@ function TweetBox({ setTweets }: Props) {
               >
                 Add Image
               </button>
-            </form>
+            </div>
           )}
 
           {image && (
